@@ -29,7 +29,7 @@ data(seed10);
 # Genotype probabilities and genome scan
 \dontrun{seed10 <- calc.genoprob( cross=seed10, step=2, off.end=0, error.prob=0, 
 	 map.function='kosambi', stepwidth='fixed');}
-out.em <- scanone( seed10, pheno.col=1:50, model='normal', method='em');
+out.em <- scanone( seed10, pheno.col=1:50, model='normal', method='hk');
 
 # Clean cross object and genome scan
 seed10 <- cleanphe(seed10,'Buffer');

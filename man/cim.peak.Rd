@@ -29,7 +29,7 @@ data(seed10);
 seed10 <- sim.geno( cross=seed10, step=2, off.end=0, error.prob=0,
 	 map.function='kosambi', stepwidth='fixed');}
 
-out.em <- scanone( seed10, pheno.col=1:50, model='normal', method='em');
+out.em <- scanone( seed10, pheno.col=1:50, model='normal', method='hk');
 out.peak <- define.peak(out.em, 'all');
 out.cem <- cim.peak(seed10,out.peak);
 }

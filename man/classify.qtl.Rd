@@ -33,7 +33,8 @@ The QTL support interval locations are defined within a \command{peak} object. T
 }
 
 \value{
-The input \command{peak} object is returned with a component \command{type} added to the components of \command{names(peak\$trait\$chromosome)} for each previously detected QTL:
+The input \command{peak} object is returned with a component \command{type} added to the components of 
+\command{names(peak\$trait\$chromosome)} for each previously detected QTL:
 \item{type}{
 	\command{cis} or \command{trans} for cis- and trans- eQTL respectively.
 	\command{<NA>} if the etrait location is unknown or not nuclear.
@@ -52,7 +53,7 @@ seed10 <- sim.geno( cross=seed10, step=2, off.end=0, error.prob=0,
 	map.function='kosambi', stepwidth='fixed');}
 
 # Genome scan and QTL detection
-out.em <- scanone( seed10, pheno.col=1:50, model='normal', method='em');
+out.em <- scanone( seed10, pheno.col=1:50, model='normal', method='hk');
 out.peak <- define.peak( out.em, 'all');
 
 # Additive effect computing and peaks localization

@@ -28,7 +28,7 @@ Returns a list containing a variety of summary information about QTL distributio
 \examples{
 data(seed10);
 
-out.em <- scanone( seed10, pheno.col=1:50, model='normal', method='em');
+out.em <- scanone( seed10, pheno.col=1:50, model='normal', method='hk');
 out.peak <- define.peak(out.em,'all');
 out.peak <- calc.adef(seed10,out.em,out.peak);
 

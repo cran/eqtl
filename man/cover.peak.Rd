@@ -20,7 +20,7 @@ return a data frame of class \command{peak.array}
 \examples{
 data(seed10);
 
-out.em <- scanone( seed10, pheno.col=1:50, model='normal', method='em');
+out.em <- scanone( seed10, pheno.col=1:50, model='normal', method='hk');
 out.peak <- define.peak( out.em, 'all');
 
 # return the list of QTL which colocalize at 4 cM on chromosome 3

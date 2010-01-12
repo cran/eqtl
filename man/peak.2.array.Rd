@@ -47,7 +47,7 @@ According the methods used to create the peak object, the following columns coul
 data(seed10);
 
 # Defining QTLs for all traits
-out.em <- scanone( seed10, pheno.col=1:50, model='normal', method='em');
+out.em <- scanone( seed10, pheno.col=1:50, model='normal', method='hk');
 out.peak <- define.peak( out.em, 'all',graph=TRUE,save.pict=TRUE);
 
 \dontrun{out.array <- peak.2.array(out.peak);

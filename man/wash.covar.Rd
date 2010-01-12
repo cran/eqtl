@@ -26,7 +26,7 @@ The input \command{scanone} object is returned.
 \examples{
 data(seed10);
 
-out.em <- scanone( seed10, pheno.col=1:5, model='normal', method='em');
+out.em <- scanone( seed10, pheno.col=1:5, model='normal', method='hk');
 out.peak <- define.peak( out.em, 'all');
 
 covar <- map.peak(out.peak)

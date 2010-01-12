@@ -34,7 +34,7 @@ The input \command{peak} object is returned with components added to components 
 data(seed10);
 
 # Genome scan and QTL detection
-out.em <- scanone( seed10, pheno.col=1:50, model='normal', method='em');
+out.em <- scanone( seed10, pheno.col=1:50, model='normal', method='hk');
 out.peak <- define.peak(out.em, 'all');
 
 # Additive effect computing

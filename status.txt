@@ -5,6 +5,14 @@ copyright (c) 2010-04, Ahmid A Khalili
 Licensed under the GNU General Public Licence version 2 (June, 1991)
 ----------------------------------------------------------------------
 
+Version 1.1-4, 02/12/2010:
+
+Minor changes:
+
+  Fixed bugs for functions calc.Rsq, genoplot and classify.qtl
+  Fixed dependencies bugs for R/qtl version 1.19-20 ( kindly patched by
+K.Broman )
+
 Version 1.1, 26/04/2010:
 
 Major changes:

@@ -1,4 +1,7 @@
 
+Users of the R/eqtl package must agree to the terms of the license
+licence agreement used for the R/qtl package.
+
 Users of the R/qtl package must agree to the terms of the following
 license agreement.
 

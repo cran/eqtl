@@ -65,7 +65,7 @@ A QTL whose support interval can be reached and defined, has more weight than a 
 \examples{
 data(seed10);
 
-out.em <- scanone( seed10, pheno.col=1:50, model='normal', method='em');
+out.em <- scanone( seed10, pheno.col=1:50, model='normal', method='hk');
 
 ################################################
 # Detecting QTL with LOD drop support interval #

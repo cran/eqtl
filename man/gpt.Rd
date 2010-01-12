@@ -27,17 +27,18 @@ data(seed10);
 # Compute the global permutation threshold with 100 permutations on 100 individuals
 out_100.gpt <- gpt(seed10, 10, 10)
 
+out_100.gpt
+
 # Significance LOD threshold value with alpha at 0.05 (5%)
-\dontrun{th_1000 <- out_1000.gpt[order(out.gpt,decreasing=TRUE)][5000];}
-th_100 <- out_100.gpt[order(out_100.gpt,decreasing=TRUE)][50];
+\dontrun{th_1000 <- as.numeric(out_1000.gpt)[order(out_1000.gpt,decreasing=TRUE)][5000];}
+ th_100 <- as.numeric(out_100.gpt)[order(out_100.gpt,decreasing=TRUE)][5];
 
-th_100;
-mean(summary(out_100.gpt, alpha=0.05));
+th_100
 
-hist(out_100.gpt,nclass=50,col='gray')
+hist(unclass(out_100.gpt),nclass=50,col='gray')
 abline(v=th_100,col='red')
 
-# out.em <- scanone(seed10, method='em', chr=c(1:5));
+# out.em <- scanone(seed10, method='hk', chr=c(1:5));
 \dontrun{plot(out.em, chr=c(1:5));
 add.threshold(out.em, chr=c(1:5), perms=out_1000.gpt, alpha=0.05);
 add.threshold(out.em, chr=c(1:5), perms=out_1000.gpt, alpha=0.1, col="green");}

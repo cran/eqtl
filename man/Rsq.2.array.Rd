@@ -26,7 +26,7 @@ Returns an object of class \command{rsq} which is a simple data frame with colum
 data(seed10);
 
 # Genome scan and QTL detection
-out.em <- scanone(seed10, pheno.col=1:50, model='normal', method='em');
+out.em <- scanone(seed10, pheno.col=1:50, model='normal', method='hk');
 out.peak <- define.peak(out.em, 'all');
 
 # Computing additive effect
