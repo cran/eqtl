@@ -1,35 +1,36 @@
 \name{define.peak}
 \alias{define.peak}
-\title{Define QTL with support interval and exclusionary window}
+\title{Defines the QTL with support interval and exclusionary window}
 \description{
-Define QTL with LOD-drop support interval by using the results of a single QTL genome scan \code{scanone} and using a genetical exclusionary window.
+Define QTL with LOD drop support interval by using the results of a single QTL genome scan \code{\link[qtl]{scanone}} and using a genetical exclusionary window.
 }
 
 \usage{
-define.peak(scanone,lodcolumn=1,chr=,th=2.3,si=1.5,graph=FALSE,window.size=20,round,save.pict=FALSE, phe.name, ...)
+define.peak(scanone,lodcolumn=1,chr,th=2.3,si=1.5,graph=FALSE,window.size=20,
+round,save.pict=FALSE, phe.name, \dots)
 }
 
 \arguments{
-\item{scanone}{ An object of class \code{scanone}. See "qtl" package manual for \code{scanone} function details.}
-\item{lodcolumn}{ Indicates on which of the LOD score columns (phenotypes) should QTLs be defined. This can be "\code{all}" which indicates all LOD score columns. This can also be a vector of integers indicating which of the columns should be used or a strings vector matching the names of the LOD columns, the phenotypes' name, to analyse. See "qtl" package manual for \code{scanone} function details.}
+\item{scanone}{ An object of class \code{\link[qtl]{scanone}}. See \pkg{qtl} package manual for \code{\link[qtl]{scanone}} function details.}
+\item{lodcolumn}{ Indicates on which of the LOD score columns (phenotypes) the QTLs should be defined. This can be \command{"all"} which indicates all LOD score columns. This can also be a vector of integers indicating which of the columns should be used or a strings vector matching the names of the LOD columns, the phenotypes' name, to analyse. See \pkg{qtl} package manual for \code{\link[qtl]{scanone}} function details.}
 \item{chr}{ An optional vector indicating the chromosomes for which QTLs should be defined.}
 \item{th}{ A single numeric value which sets the LOD score significance threshold. Only peaks with LOD score above this value will be analysed.}
-\item{si}{ A single numeric value which sets the QTL's Support Interval. \code{si} is the value of the accepted drop of LOD score to estimate the likely region on which the QTL is localized.}
-\item{graph}{ If \code{TRUE}, draws the LOD curve with LOD peaks and support interval for the detected QTLs.}
+\item{si}{ A single numeric value which sets the QTL's Support Interval. \command{si} is the value of the accepted drop of LOD score to estimate the likely region on which the QTL is localized.}
+\item{graph}{ If \command{TRUE}, draws the LOD curve with LOD peaks and support interval for the detected QTLs.}
 \item{window.size}{ The exclusionary window size: A single numeric value setting the minimum genetic distance between two distinct QTLs to be considered. }
-\item{save.pict}{ If \code{TRUE}, save the LOD curves drawn with support interval as png files named like \code{"trait name"_"chromosome"_"a number".png} in the current folder.}
-\item{round}{An optional integer indicating the precision to be used for the LOD score. See \code{round} function for details.}
-\item{phe.name}{ An optional character string specifying the name of the analysed trait. When performing \code{scanone} on a single trait, the lodcolumn is named 'lod' and as the analysed trait.}
-\item{...}{ Passed to the functions \code{plot} and \code{plot.scanone} when they are called (if \code{graph=TRUE}). Passed the maximum size of the genomic region parameter: \code{m=10} should set 2*10cM for the inferior and the superior SI bounds from the position of the peak}
+\item{save.pict}{ If \command{TRUE}, save the LOD curves drawn with support interval as png files named like \command{"trait name"\_"chromosome"\_"a number".png} in the current folder.}
+\item{round}{An optional integer indicating the precision to be used for the LOD score. See \command{round} function for details.}
+\item{phe.name}{ An optional character string specifying the name of the analysed trait. When performing \code{\link[qtl]{scanone}} on a single trait, the lodcolumn is named 'lod' and as the analysed trait.}
+\item{\dots}{ Passed to the functions \command{plot} and \command{plot.scanone} when they are called (if \command{graph=TRUE}). Passed the maximum size of the genomic region parameter: \command{m=10} should set 2*10cM for the inferior and the superior SI bounds from the position of the peak}
 }
 
 \details{
-This function is used to detect and report QTL regions from a one-QTL genome scan performed by \code{scanone} function.
-A QTL is considered as a genomic region defined by a maximum LOD score peak value, its position and the position of its support interval (here called "SI"). The SI is estimated by the accepted drop of LOD score from the maximum LOD value defining the QTL region (the LOD peak). The FDR fells as the QTL SI size increases with lower LOD scores away from the peak. Usually we use \code{si=1.5} or \code{si=2}. A genetic exclusionary window sets the minimum distance between two distinct QTLs we consider being able to detect and depends directly on the size of the population. Due to the shape of the LOD curve, the drop of LOD score cannot be reached in some cases. Therefore a maximum SI size is set at 20cM by default. \code{m=10} will set 2*10cM for the inferior and the superior SI bounds. \code{graph=TRUE} specify to draw the LOD curves and the LOD SI on different chart for each QTL on their chromosome. No graphical setup has been defined and therefore they will be drawn one above the others in the same R graphical window. To setup the graph page and print all chart in same window, one may use the graphical parameter \code{mfrow} of the R function \code{par()} according the needs before launching \code{define.peak}. You may not want to set \code{graph=TRUE} and \code{lodcolumn="all"} at the same time depending on the amount of data. The parameter \code{save.pict} is useful to save systematically all charts generated by \code{define.peak}. These graphs are already page setted by the usual graphical functions (like \code{mfrow}).
+This function is used to detect and report QTL regions from a one-QTL genome scan performed by the \code{\link[qtl]{scanone}} function.
+A QTL is considered as a genomic region defined by a maximum LOD score peak value, its position and the position of its support interval (here called dQuote{SI}). The SI is estimated by the accepted drop of LOD score from the maximum LOD value defining the QTL region (the LOD peak). The FDR falls as the QTL SI size increases with lower LOD scores away from the peak. Usually we use \command{si=1.5} or \command{si=2}. A genetic exclusionary window sets the minimum distance between two distinct QTLs which we consider being able to detect and depends directly on the size of the population. Due to the shape of the LOD curve, the drop of LOD score cannot be reached in some cases. Therefore a maximum SI size is set at 20 cM by default. \command{m=10} will set 2*10cM for the inferior and the superior SI bounds. \command{graph=TRUE} specify to draw the LOD curves and the LOD SI on different chart for each QTL on their chromosome. No graphical setup has been defined and therefore they will be drawn one above the other in the same R graphical window. To setup the graph page and print all the charts in same window, one may use the graphical parameter \command{mfrow} of the R function \command{par()} according specific needs before launching \command{define.peak}. You may not want to set \command{graph=TRUE} and \command{lodcolumn="all"} at the same time depending on the amount of data. The parameter \command{save.pict} is useful to save systematically all charts generated by \command{define.peak}. These graphs are already page setted by the usual graphical functions (like \command{mfrow}).
 }
 
 \value{
-Return an object of class \code{peak} which is a list of components corresponding to traits. \code{names(peak)} contains the names of the traits. Each trait is itself a list with elements corresponding to chromosomes. For chromosomes on which no QTL have been detected, \code{peak$trait$chromosome} contains the \code{NA} value (where \code{chromosome} is the number of the chromosome). For those on which a QTL has been detected \code{peak$trait$chromosome} contains a data frame where rows are detected QTLs and columns are peak features (which describe QTLs). \code{names(peak$trait$chromosome)} contains the peak features:
+Returns an object of class \command{peak} which is a list of components corresponding to traits. \command{names(peak)} contains the names of the traits. Each trait is itself a list with elements corresponding to chromosomes. For chromosomes on which no QTL have been detected, \command{peak\$trait\$chromosome} contains a \command{NA} value (where \command{chromosome} is the number identifying the chromosome). For those on which a QTL has been detected \command{peak\$trait\$chromosome} contains a data frame where rows are detected QTLs and columns are peak features (which describe QTLs). \command{names(peak\$trait\$chromosome)} contains the peak features:
 \item{lod}{The peak's LOD score.}
 \item{mname.peak}{The maximum LOD peak's (pseudo-)marker name.}
 \item{peak.cM}{The maximum LOD peak's genetic position in centiMorgan (cM).}
@@ -41,7 +42,18 @@ Return an object of class \code{peak} which is a list of components correspondin
 }
 
 \section{The subjective quality of the support interval}{
-A QTL whose support interval could have been reached and defined, has more weight than a QTL whose support interval could not and has been defined by his maximum size (argument \code{m}). This quality information just correspond to symbols indicating, how were defined each bounds of the QTL support interval. The right symbols gives the information for the superior SI bounds and so on for the right bounds. '+' indicate that the LOD-drop support interval has been reached. '<-' and '->' indicates that the LOD-drop SI hasn't been reached before the maximum SI size (defined by \code{m} argument) for the inferior and the inferior bounds respectively. '|' indicates that the LOD-drop SI has been delimited by the beginning or the end of the LOD curve for the inferior or the superior bounds respectively. Therefore the quality symbols '|->' indicates that the SI has been delimited on the left by the beginning of the LOD curve and on the right by the maximum SI size. Therefore, the drop of LOD score is not reached neither on the left or on the right. '+|' indicates that the SI has been reached on the left but has been delimited on its right by the end of the LOD curve.
+A QTL whose support interval can be reached and defined, has more weight than a QTL whose support interval cannot and has been defined by its maximum size (argument \command{m}). This quality information corresponds to symbols indicating, how each were defined by the bounds of the QTL support interval. The symbols on the right side gives the information for the superior SI bounds and so on for the left sided bounds. \command{'+'} indicates that the LOD-drop support interval has been reached. \command{'<-'} and \command{'->'} indicates that the LOD-drop SI hasn't been reached before the maximum SI size (defined by \command{m} argument) for the inferior and the superior bounds respectively. \command{'|'} indicates that the LOD-drop SI has been delimited by the beginning or the end of the LOD curve either for the inferior or superior bounds respectively. Therefore, the quality symbols \command{'|->'} indicates that the SI has been delimited on the left by the beginning of the LOD curve and on the right by the maximum SI size. Therefore, the drop of LOD score is not reached on either the left or right. \command{'+|'} indicates that the SI has been reached on the left but has been delimited on the right by the end of the LOD curve.
+
+\describe{
+\item{\bold{\command{Symbols}} -}{\emph{\bold{Signification}}}
+\item{\command{"++"}		-}{\emph{The QTL is bounded by a LOD-drop with both both SI sides reached.}}
+\item{\command{"<-->"}	-}{\emph{The QTL is bounded by the \command{m} parameter. The SI is not reached.}}
+\item{\command{"+|"}		-}{\emph{The QTL is bounded by the end of the chromosome on the right and by a SI on the left.}}
+\item{\command{"|+"}		-}{\emph{The QTL is bounded by the beginning of the chromosome on the left and by a SI on the right.}}
+\item{\command{"<-|"}		-}{\emph{The QTL is bounded by the end of the chromosome on the right and \command{m/2} on the left.}}
+\item{\command{"|->"}		-}{\emph{The QTL is bounded by the beginning of the chromosome on the left and \command{m/2} on the right.}}
+}
+
 }
 
 \references{ Broman KW, Wu H, Sen S, Churchill GA (2003) R/qtl: QTL mapping in experimental crosses. Bioinformatics  19:889-890   }
@@ -53,11 +65,6 @@ A QTL whose support interval could have been reached and defined, has more weigh
 \examples{
 data(seed10);
 
-# Genotype probabilities and genome scan
-seed10 <- calc.genoprob( cross=seed10, step=2, off.end=0, error.prob=0,
-	 map.function='kosambi', stepwidth='fixed');
-seed10 <- sim.geno( cross=seed10, step=2, off.end=0, error.prob=0,
-	 map.function='kosambi', stepwidth='fixed');
 out.em <- scanone( seed10, pheno.col=1:50, model='normal', method='em');
 
 ################################################

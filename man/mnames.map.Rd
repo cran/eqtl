@@ -10,11 +10,11 @@ mnames.map(cross)
 }
 
 \arguments{
-\item{cross}{ An object of class \code{cross}. See 'qtl' package manual for \code{read.cross} function details.}
+\item{cross}{ An object of class \command{cross}. See 'qtl' package manual for \command{read.cross} function details.}
 }
 
 \details{
-Return the list of all markers of the cross object sort by chromosome appearance and the marker relatives position. This function is used by the \code{cim.peak} function.
+Returns the list of all markers of the cross object sort by chromosome appearance and the marker relatives position. This function is used by the \command{cim.peak} function.
 }
 
 \value{

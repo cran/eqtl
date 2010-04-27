@@ -1,15 +1,15 @@
 \name{pseudo.map}
 \alias{pseudo.map}
 \title{The makers and pseudo-markers genetic map}
-\description{List the markers and pseudo-markers genetic positions for all of the chromosomes.}
+\description{Lists the markers and pseudo-markers genetic positions for all of the chromosomes.}
 \usage{
 pseudo.map( cross )
 }
 \arguments{
-  \item{cross}{ An object of class \code{cross}. See 'qtl' package manual for \code{read.cross} function details.}
+  \item{cross}{ An object of class \command{cross}. See 'qtl' package manual for \command{read.cross} function details.}
 }
 \details{
-This function list the markers and pseudo-marker genetic positions for all of the chromosomes. This function is used by others functions.
+This function lists the markers and pseudo-marker genetic positions for all of the chromosomes. This function is used by others functions. It is necessary to have previously perform the calc.genoprob function before using this function.
 }
 \value{
 A vector containing containing the genetic position of markers and pseudo-marker for all of the chromosomes sort by positions and chromosomes appearance.
@@ -19,10 +19,6 @@ A vector containing containing the genetic position of markers and pseudo-marker
 \seealso{\code{\link[qtl]{calc.genoprob}}}
 \examples{
 data(seed10);
-
-# Genotype probabilities
-seed10 <- calc.genoprob( cross=seed10, step=2, off.end=0, error.prob=0,
-	 map.function='kosambi', stepwidth='fixed');
 
 pseudo.map(seed10);
 }

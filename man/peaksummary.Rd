@@ -3,23 +3,23 @@
 \title{Print summary of QTL definition}
 
 \description{
-Print summary information about QTL contained in a \code{peak} object.
+Print summary information about QTL contained in a \command{peak} object.
 }
 \usage{
 peaksummary(peak.array,cross,exc=data.frame(inf=0,sup=0,chr=NA),graph=FALSE,...)
 }
 \arguments{
-\item{peak.array}{An object of class \code{peak.array}. See \code{peak.2.array} and \code{Rsq.2.array} functions for details.}
-\item{cross}{An object of class \code{cross}. See "qtl" package manual for \code{read.cross} function details.}
-\item{exc}{A data frame with columns \code{inf}, \code{sup} and \code{chr} which represent a genomic region to exclude from the summary. \code{inf}, \code{sup},\code{chr} represents the genomic location in base pair (start and stop of the sequence to exclude respectively), \code{chr} specify the chromosome. They are single numeric values.}
+\item{peak.array}{An object of class \command{peak.array}. See \command{peak.2.array} and \command{Rsq.2.array} functions for details.}
+\item{cross}{An object of class \command{cross}. See "qtl" package manual for \command{read.cross} function details.}
+\item{exc}{A data frame with columns \command{inf}, \command{sup} and \command{chr} which represent a genomic region to exclude from the summary. \command{inf}, \command{sup},\command{chr} represents the genomic location in base pair (start and stop of the sequence to exclude respectively), \command{chr} specify the chromosome. They are single numeric values.}
 \item{graph}{If TRUE, print summary graphs.}
-\item{...}{Ignored at this point.}
+\item{\dots}{Ignored at this point.}
 }
 \note{
-No page setting has been specified in the \code{peaksummary} function therefore if \code{graph=TRUE} all graphs will appear one above the others within the same R graphical window. You should specified use the parameter \code{mfrow} of the R function \code{par()} to setup the graph page.
+No page settings have been specified in the \command{peaksummary} function therefore if \command{graph=TRUE} all graphs will appear one above the other within the same R graphical window. You should specified the use by the parameter \command{mfrow} of the R function \command{par()} to setup the graph page.
 }
 \value{
-Return a list containing a variety of summary information about QTL distribution according to the \code{peak} features.
+Returns a list containing a variety of summary information about QTL distribution according to the \command{peak} feature.
 }
 \author{Hamid A. Khalili}
 \seealso{
@@ -27,12 +27,6 @@ Return a list containing a variety of summary information about QTL distribution
 }
 \examples{
 data(seed10);
-
-seed10 <- calc.genoprob( cross=seed10, step=2, off.end=0, error.prob=0,
-	map.function='kosambi', stepwidth='fixed');
-seed10 <- sim.geno( cross=seed10, step=2, off.end=0, error.prob=0,
-	map.function='kosambi', stepwidth='fixed');
-
 
 out.em <- scanone( seed10, pheno.col=1:50, model='normal', method='em');
 out.peak <- define.peak(out.em,'all');

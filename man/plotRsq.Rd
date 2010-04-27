@@ -3,18 +3,18 @@
 \title{Plot R square data}
 
 \description{
-Draw histograms of R square value distribution for \code{rsq} object.
+Draw histograms of R square value distribution for \command{rsq} object.
 }
 \usage{
 plotRsq( rsq, par=c(2,2), ...)
 }
 \arguments{
-\item{rsq}{An object of class \code{rsq}. See \code{calc.Rsq} for function details.}
-\item{par}{A vector of two integers corresponding to the \code{mfrow} parameter of the \code{par()} function.}
-\item{...}{Passed to the function \code{hist} and \code{par} when they are called.}
+\item{rsq}{An object of class \command{rsq}. See \command{calc.Rsq} for function details.}
+\item{par}{A vector of two integers corresponding to the \command{mfrow} parameter of the \command{par()} function.}
+\item{\dots}{Passed to the function \command{hist} and \command{par} when they are called.}
 }
 \details{
-Draw histograms of R square value distribution from an object of class \code{rsq}. Three histograms are drawn: the first one shows the R square value distribution of single QTLs. The second shows the distribution for QTL interactions. The last one shows all R square values distribution.
+Draw histograms of R square value distribution from an object of class \command{rsq}. Three histograms are drawn: the first one shows the R square value distribution of single QTLs. The second shows the distribution for QTL interactions. The last one shows all R square values distribution.
 }
 \value{none}
 \author{Hamid A. Khalili}

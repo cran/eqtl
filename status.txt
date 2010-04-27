@@ -1,0 +1,19 @@
+
+Revision history for the R/eqtl package
+----------------------------------------------------------------------
+copyright (c) 2010-04, Ahmid A Khalili
+Licensed under the GNU General Public Licence version 2 (June, 1991)
+----------------------------------------------------------------------
+
+Version 1.1, 26/04/2010:
+
+Major changes:
+
+  Major spelling correction.
+  Fixed Rd documentations warnings.
+
+Minor changes:
+
+  Fixed few bugs.
+  Revised manual 'A brief introduction'.
+
