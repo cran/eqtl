@@ -33,10 +33,12 @@ function(x,string='Buffer')
 	if ( class(x)[1] == 'scanone') {
 		coord <- grep(string,names(x))
 		cat("Drop ",length(coord),"lodcolumn\n");
+		if(!length(coord)) return(x);
 		nf <- x[,-coord]
 	} else {
 		coord <- grep(string,names(x$pheno))
 		cat("Drop ",length(coord),"phenotypes\n");
+		if(!length(coord)) return(x);
 		nf <- x
 		nf$pheno <- x$pheno[,-coord]
   }

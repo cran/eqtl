@@ -5,6 +5,13 @@ copyright (c) 2010-04, Ahmid A Khalili
 Licensed under the GNU General Public Licence version 2 (June, 1991)
 ----------------------------------------------------------------------
 
+Version 1.1-5, 15/02/2011;
+
+  Fixed bug for function clean.phe
+  Fixed class bug in Rsq.2.array
+  Corrected command examples in chapter 'A brief introduction : Introductory
+comments on R/eqtl'
+
 Version 1.1-4, 02/12/2010:
 
 Minor changes:
@@ -17,7 +24,7 @@ Version 1.1, 26/04/2010:
 
 Major changes:
 
-  Major spelling correction.
+  Major spelling correction. ( kindly patched by J.Yansouni )
   Fixed Rd documentations warnings.
 
 Minor changes:

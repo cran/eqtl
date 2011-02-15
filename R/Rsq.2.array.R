@@ -58,8 +58,8 @@ function(rsq,peak.array)
 	Rpf <- Rpf[-1]
 	Rsq <- Rsq[-1]
 	
-  attributes(array)$class <- c('peak.array','data.frame')
 	array <- cbind(peak.array,Rsq,Rpf)
+        attributes(array)$class <- c('peak.array','data.frame')
 	return(array)
 }
 

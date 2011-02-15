@@ -7,7 +7,7 @@
 \section{Preliminaries to R/eqtl}{
 	\itemize{
 		\item In order to use the R/\pkg{eqtl} package, you must type (within R)  \command{library(eqtl)}. This function will automatically load the R/\pkg{qtl} library required. You may want to include this in a \code{\link[base:Startup]{.Rprofile}} file.
-		\item Documentation and several tutorials are available from the R archive (\url{http://cran.r-project.org}).
+		\item Documentation and several tutorials are available from the R archive : \url{http://cran.r-project.org}.
 		\item Use the \code{\link[utils]{help.start}} function to start the html version of the R help.
 		\item Type \code{library(help=qtl)} to get a list of the functions in R/\pkg{qtl}.
 		\item Type \code{library(help=eqtl)} to get a list of the functions in R/\pkg{eqtl}.
@@ -71,8 +71,8 @@ seed10.clean <- cleanphe(seed10,"Ctrl");
 	Use the \command{scanone} function to perform an interval mapping.
 
 	\preformatted{
-BaySha.em <- scanone(seed10.clean,method='em',pheno.col=1:nphe(seed10.clean),
-	model='normal')
+BaySha.em <- scanone(seed10.clean,method='em',
+        pheno.col=1:nphe(seed10.clean),	model='normal')
 	}
 	Keep in mind that \command{BaySha.em} is obtained from \command{seed10.clean} which has been removed of some phenotypes from \command{seed10}. Thus, the dataframe from now on corresponding to \command{BaySha.em} is always \command{seed10.clean}.
 	}%end of paragraph
@@ -172,7 +172,7 @@ BaySha.array <- Rsq.2.array(rsq=BaySha.Rsq,BaySha.array);
 
 	\preformatted{
 par(mfrow=c(3,4));
-BaySha.summary <- peaksummary(peak.2.array,seed10.cleaned,graph=TRUE);
+BaySha.summary <- peaksummary(BaySha.array,seed10.cleaned,graph=TRUE);
 par(mfrow=c(1,1));
 names(BaySha.summary);
 BaySha.summary;

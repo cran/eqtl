@@ -83,6 +83,9 @@ function( cross, scanone, peak, round, ...)
 
 			if(!is.na(peak[[i]][y])){
 
+				# debug hk
+				#echo(names(peak[[i]]))
+
 				pic <- peak[[i]][[y]]$mname.peak
 				ad<-1;m<-1;pos<-1
 
