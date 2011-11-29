@@ -303,7 +303,7 @@ function( scanone, lodcolumn=1, chr, th=2.3, si=1.5, graph=FALSE, window.size=20
 
 			if(save.pict) png( filename=paste(trait[z],i,z,".png",sep="_"), width=1280, height=1024 )
 			if (graph | save.pict) {
-				plot.scanone(scanone,lodcolumn=num[z],chr=chr[i],show.marker.names=TRUE,lwd=1,main=paste('chr',chr[i]))
+				qtl:::plot.scanone(scanone,lodcolumn=num[z],chr=chr[i],show.marker.names=TRUE,lwd=1,main=paste('chr',chr[i]))
 				abline(h=th,col="pink",lwd=1)
 				abline(v=curve[[c]]$pos[peak$inf],col="blue")
 				abline(v=curve[[c]]$pos[peak$sup],col="blue")

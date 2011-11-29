@@ -81,7 +81,7 @@ function( cross, peak )
 		if (length(cimlist)>2){
 			for (i in 3:length(cimlist)){
 				n <- c(names(cim),names(cimlist[[i]])[3])
-				cim <- suppressWarnings(c.scanone(cim,cimlist[[i]]))
+				cim <- suppressWarnings(qtl:::c.scanone(cim,cimlist[[i]]))
 				attributes(cim)$names <- n
 			}
 		}
