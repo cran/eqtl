@@ -1,8 +1,8 @@
-2e84b503d2344699dfde579b975414cd *DESCRIPTION
+98d4bff23fb86bec5aae9dcd65b8d13a *DESCRIPTION
 310ee8528c930eb8a0988d9d17ff4cfa *NAMESPACE
 3a32c7aaad4fbcdfabbcadbf6da19dc5 *R/Rsq.2.array.R
 e2ca2911d831023c96e20cd68cd2b73e *R/calc.Rsq.R
-721d733292de1e23c7dbc6174d7cc110 *R/calc.adef.R
+9e0ee0deec4ee29ea2c04eb9c909e53c *R/calc.adef.R
 39ced47224501b10e883f79a5ab7f263 *R/cim.peak.R
 b65e85aebd3f390ab8c471971463af7e *R/classify.qtl.R
 e58c6eeb30b644f1b3a79a7027d037bc *R/cleanphe.r

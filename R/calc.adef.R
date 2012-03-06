@@ -4,7 +4,7 @@
 #
 # copyright (c) 2008-3, Ahmid A Khalili
 # 
-# last modified Jul, 2008
+# last modified Mar, 2012
 # first written Mar, 2008
 # Licensed under the GNU General Public License version 2 (June, 1991)
 # 
@@ -44,7 +44,12 @@ function( cross, scanone, peak, round, ...)
 		stop("Arguments scanone or cross misspecified: scanone should have been performed on cross object")
 	if ( ! 'draws' %in% names(cross$geno[[1]]) ) stop('First running sim.genoprob')
 	if ( ! 'prob' %in% names(cross$geno[[1]]) ) stop('First running calc.genoprob')
+
 	bool <- attributes(cross$geno[[1]]$draws) %in% attributes(cross$geno[[1]]$prob)
+
+        # next line added by Karl Broman
+        bool[2] <- all(colnames(cross$geno[[1]]$draws) == colnames(cross$geno[[1]]$prob))
+
 	if ( ! all(bool[-1]) )
 		stop("cross object error: calc.genoprob and sim.genoprob should be computed with the same parameters ( step, map.function, etc. )")
 	if ( "additive.effect" %in% attr(peak,'features',exact=TRUE) ){
